@@ -1,8 +1,8 @@
-(ns edu.ucdenver.ccp.kr.examples.jena-mem-kb
-  (use edu.ucdenver.ccp.kr.kb
-       edu.ucdenver.ccp.kr.rdf
-       edu.ucdenver.ccp.kr.sparql)
-  (require edu.ucdenver.ccp.kr.jena.kb))
+(ns com.michaelgaare.kr.examples.jena-mem-kb
+  (use com.michaelgaare.kr.kb
+       com.michaelgaare.kr.rdf
+       com.michaelgaare.kr.sparql)
+  (require com.michaelgaare.kr.jena.kb))
 
 ;;; --------------------------------------------------------
 ;;; create kb
@@ -14,7 +14,7 @@
 
 (defn add-namespaces [kb]
   (register-namespaces kb
-                       '(("ex" "http://www.example.org/") 
+                       '(("ex" "http://www.example.org/")
                          ("rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#")
                          ("rdfs" "http://www.w3.org/2000/01/rdf-schema#")
                          ("owl" "http://www.w3.org/2002/07/owl#")
@@ -31,7 +31,7 @@
   ;;to the 'default' kb
   (binding [*kb* kb]
     (add '(ex/KevinL foaf/mbox "<mailto:kevin@example.org>")))
-  
+
   ;;multiple triples
   (add-statements kb
                   '((ex/BobL rdf/type ex/Person)
@@ -84,7 +84,7 @@
 ;;; REPL trace:
 ;;; --------------------------------------------------------
 
-;; user> (use 'edu.ucdenver.ccp.kr.examples.sesame-mem-kb)
+;; user> (use 'com.michaelgaare.kr.examples.sesame-mem-kb)
 ;; nil
 
 ;; user> (def my-kb (add-namespaces
@@ -112,7 +112,7 @@
 ;; emailing  Bob Livingston  at:  <mailto:bob@example.org>
 ;; nil
 
-;; user> (use 'edu.ucdenver.ccp.kr.kb)
+;; user> (use 'com.michaelgaare.kr.kb)
 ;; user> (close my-kb)
 
 ;;; --------------------------------------------------------

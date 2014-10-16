@@ -1,4 +1,4 @@
-(defproject edu.ucdenver.ccp/kr-core "1.4.20-SNAPSHOT"
+(defproject com.michaelgaare/kr-core "1.4.20-SNAPSHOT"
   :description "KR core API and tools."
   :parent-project {:path "../project.clj"
                    :inherit [:dependencies  :license]

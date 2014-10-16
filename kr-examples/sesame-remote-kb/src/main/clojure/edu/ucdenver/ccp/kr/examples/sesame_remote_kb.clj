@@ -1,8 +1,8 @@
-(ns edu.ucdenver.ccp.kr.examples.sesame-remote-kb
-  (use edu.ucdenver.ccp.kr.kb
-       edu.ucdenver.ccp.kr.rdf
-       edu.ucdenver.ccp.kr.sparql)
-  (require edu.ucdenver.ccp.kr.sesame.kb)
+(ns com.michaelgaare.kr.examples.sesame-remote-kb
+  (use com.michaelgaare.kr.kb
+       com.michaelgaare.kr.rdf
+       com.michaelgaare.kr.sparql)
+  (require com.michaelgaare.kr.sesame.kb)
   (import org.openrdf.repository.http.HTTPRepository))
 
 ;;; --------------------------------------------------------
@@ -11,19 +11,19 @@
 
 (defn sesame-remote-test-kb []
   (open
-   (edu.ucdenver.ccp.kr.sesame.kb/new-sesame-server
+   (com.michaelgaare.kr.sesame.kb/new-sesame-server
     :server "http://dbpedia.org/sparql"
     :repo-name "")))
 
 
 (defn add-namespaces [kb]
   (update-namespaces kb
-                     '(("ex" "http://www.example.org/") 
+                     '(("ex" "http://www.example.org/")
                        ("rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#")
                        ("rdfs" "http://www.w3.org/2000/01/rdf-schema#")
                        ("owl" "http://www.w3.org/2002/07/owl#")
                        ("foaf" "http://xmlns.com/foaf/0.1/")
-                       
+
                        ("dbpedia-owl" "http://dbpedia.org/ontology/")
                        ("dbpedia" "http://dbpedia.org/resource/"))))
 
@@ -52,7 +52,7 @@
 ;;; REPL trace:
 ;;; --------------------------------------------------------
 
-;; user> (use 'edu.ucdenver.ccp.kr.examples.sesame-remote-kb)
+;; user> (use 'com.michaelgaare.kr.examples.sesame-remote-kb)
 ;; nil
 
 ;; user> (def a-kb (add-namespaces (sesame-remote-test-kb)))
@@ -76,10 +76,10 @@
 ;; visiting  Reiteralm
 
 
-;; user> (use 'edu.ucdenver.ccp.kr.kb)
+;; user> (use 'com.michaelgaare.kr.kb)
 ;; nil
 ;; user> (close a-kb)
-;; #edu.ucdenver.ccp.kr.sesame.kb.SesameKB{:server #<HTTPRepository org.openrdf.repository.http.HTTPRepository@f4c7f77>, :connection nil, :kb-features (:sparql-1-0 :sparql-1-1), :ns-map-to-long {"dbpedia" "http://dbpedia.org/resource/", "dbpedia-owl" "http://dbpedia.org/ontology/", "foaf" "http://xmlns.com/foaf/0.1/", "owl" "http://www.w3.org/2002/07/owl#", "rdfs" "http://www.w3.org/2000/01/rdf-schema#", "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#", "ex" "http://www.example.org/"}, :ns-map-to-short {"http://dbpedia.org/resource/" "dbpedia", "http://dbpedia.org/ontology/" "dbpedia-owl", "http://xmlns.com/foaf/0.1/" "foaf", "http://www.w3.org/2002/07/owl#" "owl", "http://www.w3.org/2000/01/rdf-schema#" "rdfs", "http://www.w3.org/1999/02/22-rdf-syntax-ns#" "rdf", "http://www.example.org/" "ex"}, :value-factory #<ValueFactoryImpl org.openrdf.model.impl.ValueFactoryImpl@67446579>}
+;; #com.michaelgaare.kr.sesame.kb.SesameKB{:server #<HTTPRepository org.openrdf.repository.http.HTTPRepository@f4c7f77>, :connection nil, :kb-features (:sparql-1-0 :sparql-1-1), :ns-map-to-long {"dbpedia" "http://dbpedia.org/resource/", "dbpedia-owl" "http://dbpedia.org/ontology/", "foaf" "http://xmlns.com/foaf/0.1/", "owl" "http://www.w3.org/2002/07/owl#", "rdfs" "http://www.w3.org/2000/01/rdf-schema#", "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#", "ex" "http://www.example.org/"}, :ns-map-to-short {"http://dbpedia.org/resource/" "dbpedia", "http://dbpedia.org/ontology/" "dbpedia-owl", "http://xmlns.com/foaf/0.1/" "foaf", "http://www.w3.org/2002/07/owl#" "owl", "http://www.w3.org/2000/01/rdf-schema#" "rdfs", "http://www.w3.org/1999/02/22-rdf-syntax-ns#" "rdf", "http://www.example.org/" "ex"}, :value-factory #<ValueFactoryImpl org.openrdf.model.impl.ValueFactoryImpl@67446579>}
 
 
 ;;; --------------------------------------------------------

@@ -1,3 +1,3 @@
-(defproject edu.ucdenver.ccp/kr-jena "1.4.20-SNAPSHOT"
+(defproject com.michaelgaare/kr-jena "1.4.20-SNAPSHOT"
   :description "KR Jena bindings."
-  :dependencies [[edu.ucdenver.ccp/kr-jena-core "1.4.20-SNAPSHOT"]])
+  :dependencies [[com.michaelgaare/kr-jena-core "1.4.20-SNAPSHOT"]])

@@ -1,4 +1,4 @@
-(defproject edu.ucdenver.ccp/kr "1.4.20-SNAPSHOT"
+(defproject com.michaelgaare/kr "1.4.20-SNAPSHOT"
   :description "knowledge representation and reasoning tools"
   :url "https://github.com/drlivingston/kr"
   :license {:name "Eclipse Public License 1.0"

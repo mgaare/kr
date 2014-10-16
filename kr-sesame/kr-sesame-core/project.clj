@@ -1,4 +1,4 @@
-(defproject edu.ucdenver.ccp/kr-sesame-core "1.4.20-SNAPSHOT"
+(defproject com.michaelgaare/kr-sesame-core "1.4.20-SNAPSHOT"
   :description "KR Sesame bindings."
   :parent-project {:path "../../project.clj"
                    :inherit [:dependencies :license]
@@ -12,6 +12,6 @@
                                commons-codec
                                org.slf4j/slf4j-log4j12]}
   :plugins [[lein-parent "0.2.1"]]
-  :profiles {:test {:dependencies [[edu.ucdenver.ccp/kr-core "1.4.20-SNAPSHOT"]]}}
+  :profiles {:test {:dependencies [[com.michaelgaare/kr-core "1.4.20-SNAPSHOT"]]}}
   :source-paths ["src/main/clojure"]
   :test-paths ["src/test/clojure"])
